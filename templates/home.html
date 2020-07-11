@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+{%with messages= get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p class="alert alert-info">{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<h1 style="text-align: center; font-weight: bold;">Welcome to ABC Hospital</h1>
+<h3 style="text-align: center; font-weight: bold;">Our aim is to serve the best!</h3>
+
+
+{% endblock %}

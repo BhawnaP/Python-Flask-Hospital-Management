@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+  
+<div class="container">
+      <!-- {% with messages= get_flashed_messages() %}
+        {%if messages%}
+        <div class="alert alert-danger">
+          <strong>Sorry!</strong> Patient does not exist.
+        </div>
+        {%endif%}
+      {%endwith%}
+ -->
+
+        <h2 style="text-align: center;">Search Patient Details</h2>
+        <form action="{{ url_for("search_patient") }}" method="POST">
+          <div class="form-group">
+            <label for="ssnID">Patient SSN ID:(*)</label>
+            <input type="ssnID" class="form-control" id="ssnID" placeholder="Enter ssnID" name="ssnID" required>
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;"> Update  </button>
+            
+            
+          </div> 
+        </form>
+</div>
+
+{% endblock %}

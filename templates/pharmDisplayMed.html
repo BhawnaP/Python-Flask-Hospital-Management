@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container" >
+    <!-- Patient Details Table -->
+    <h2 style="text-align: center; font-weight: bold;">Patient Details</h2>         
+    <table class="table table-hover" >
+      <thead>
+        <tr >
+          <th>Patient ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Address</th>
+          <th>DOJ</th>
+          <th>Type of Room</th>
+        </tr>
+      </thead>
+      <tbody >
+        {% for d in display %}
+          <tr>
+            <td>{{ d.SSN_ID }}</td>
+            <td>{{ d.Patient_Name }}</td>
+            <td>{{ d.Patient_Age }}</td>
+            <td>{{ d.Address }}</td>
+            <td>{{ d.Date_of_Admission }}</td>
+            <td>{{ d.Bed_type }}</td>  
+          </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+
+
+    <!-- Patient Medicine history details -->
+    <hr>
+    <h2 style="text-align: center; font-weight: bold;">Pharmacy Details</h2>         
+    <table class="table table-hover" >
+      <thead>
+        <tr >
+            <th>SSN_ID</th>
+            <th>Medicine Name</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody >
+        {% for i in res %}
+          <tr>
+            <td>{{ i.ssn_id }}</td>
+            <td>{{ i.med_name }}</td>
+            <td>{{ i.qty }}</td>
+            <td>{{ i.rate }}</td>
+            <td>{{ i.rate*i.qty }}</td>
+          </tr>
+        
+        {%endfor%}
+      </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary" style="float:right">Issue More Medicines</button>
+  </div>
+
+
+{% endblock %}

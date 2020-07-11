@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    <h2 style="text-align: center;">Delete Patient Details</h2>
+              <form action={{ url_for("delete_patient", ssnId= update.SSN_ID) }} method="POST">
+  
+                <div class="form-group">
+                  <label for="ssnID">Patient SSN ID:(*)</label>
+                  <input type="ssnID" class="form-control" id="ssnID" value=" {{ update.SSN_ID }}" placeholder="Enter ssnID" name="ssnID" required>
+                  <!-- <button type="submit" class="btn btn-primary" style="float: right;">Get</button> -->
+                  
+                </div> 
+  
+                <div class="form-group">
+                  <label for="name">Patient Name:</label>                
+                  <input type="name" class="form-control" id="name" placeholder="Enter Name" name="name" value=" {{ update.Patient_Name }}" required >
+                </div>
+                <div class="form-group">
+                  <label for="age">Patient Age:</label>
+                  <input type="age" class="form-control" id="age" placeholder="Enter age" name="age" value=" {{ update.Patient_Age }}" required>
+                </div>
+                <div class="form-group">
+                  <label for="doa">Date of Admission:</label>
+                  <input type="doa" class="form-control" id="doa" placeholder="Enter Date" name="doa" value=" {{ update.Date_of_Admission }}" required>
+                </div>
+                <div class="form-group">
+                  <label for="bedType">Bed Type:</label>
+                  <select class="form-control" id="bedType" name="bedType" value=" {{ update.Bed_type }}">
+                      <option>General</option>
+                      <option>Semi Sharing</option>
+                      <option>Single</option>
+                  </select>
+  
+                </div>
+                <div class="form-group">
+                  <label for="addr">Address:</label>
+                  <input type="addr" class="form-control" id="addr" value=" {{ update.Address }}" placeholder="Enter Address" name="addr" required>
+                </div>
+  
+                <div class="form-group">
+                  <label for="city">City:</label>
+                  <input type="city" class="form-control" id="city" value=" {{ update.City }}" placeholder="Enter city" name="city" required>
+                </div>
+  
+                <div class="form-group">
+                  <label for="state">State:</label>
+                  <input type="state" class="form-control" id="state" value=" {{ update.State }}" placeholder="Enter State" name="state" required>
+                </div>
+                
+                
+  
+                <h5 style="color: red;">Fields are mandatory</h5>
+                <button type="submit" class="btn btn-danger">Delete</button>
+                
+                
+              </form>
+  </div>
+
+
+
+{% endblock %}

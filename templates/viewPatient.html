@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+  
+<div class="container" >
+  <h2 style="text-align: center; font-weight: bold;">View Patients</h2>         
+  <table class="table table-hover" >
+    <thead>
+      <tr >
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>DOJ</th>
+        <th>Type of Room</th>
+      </tr>
+    </thead>
+    <tbody >
+      {% for p in fetch %}
+        <tr>
+          <td>{{ p.SSN_ID }}</td>
+          <td>{{ p.Patient_Name }}</td>
+          <td>{{ p.Patient_Age }}</td>
+          <td>{{ p.Address }}</td>
+          <td>{{ p.Date_of_Admission }}</td>
+          <td>{{ p.Bed_type }}</td>  
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

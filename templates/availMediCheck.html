@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container">
+    <h2 style="text-align: center; font-weight: bold;">Check Medicine Availability</h2>
+    <form action="{{ url_for("availCheck") }}" method="POST">
+      <div class="form-group">
+        <label for="ssnID">Medicine Name: </label>
+        <input type="ssnID" class="form-control" id="mname" placeholder="Enter Medicine Name" name="mname" required>
+        <hr>
+        <label for="ssnID">Quantity: </label>
+        <input type="ssnID" class="form-control" id="qty" placeholder="Enter Quantity" name="qty" required>
+        <hr>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;"> Check  </button>
+        
+        
+      </div> 
+    </form>
+</div>
+
+{%endblock%}
